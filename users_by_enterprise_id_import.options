@@ -1,0 +1,21 @@
+cql-import
+--query
+'SELECT u.enterprise_id, u.user_id, u.first_name user_first_name, u.last_name user_last_name, e.city enterprise_city FROM user u INNER JOIN enterprise e ON u.enterprise_id=e.id WHERE $CONDITIONS'
+--num-mappers
+1
+--target-dir
+/home/zemoso/imports
+--cassandra-keyspace
+iris
+--cassandra-table
+users_by_enterprise_id
+--cassandra-column-mapping
+enterprise_id:enterprise_id,user_id:user_id,user_first_name:user_first_name,user_last_name:user_last_name,enterprise_city:enterprise_city
+--connect
+jdbc:mysql://127.0.0.1/cmltDBSharing225
+--username
+root 
+--password
+zemoso123 
+--cassandra-host
+127.0.0.1

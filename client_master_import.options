@@ -1,0 +1,17 @@
+cql-import
+--table
+client_master
+--cassandra-keyspace
+iris
+--cassandra-table
+client_master
+--cassandra-column-mapping
+id:id,created_timestamp:created_tstamp,created_by_id:created_by_id,address_1:address_1,address_2:address_2,dob:dob,cell_phone:cell_phone,country:country,email_address:email_address
+--connect
+jdbc:mysql://127.0.0.1/cmltDBSharing225
+--username
+root 
+--password
+zemoso123 
+--cassandra-host
+127.0.0.1

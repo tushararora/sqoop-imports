@@ -1,0 +1,21 @@
+cql-import
+--query
+'SELECT ps.program_id, ps.service_id, p.name program_name, s.name service_name, s.budget service_budget FROM service s INNER JOIN program_service ps ON s.id=ps.service_id INNER JOIN program p ON p.id=ps.program_id WHERE $CONDITIONS'
+--num-mappers
+1
+--target-dir
+/home/zemoso/imports
+--cassandra-keyspace
+iris
+--cassandra-table
+services_by_program_id
+--cassandra-column-mapping
+program_id:program_id,service_id:service_id,program_name:program_name,service_name:service_name,service_budget:service_budget
+--connect
+jdbc:mysql://127.0.0.1/cmltDBSharing225
+--username
+root 
+--password
+zemoso123 
+--cassandra-host
+127.0.0.1

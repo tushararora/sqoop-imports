@@ -1,0 +1,21 @@
+cql-import
+--query
+'SELECT upa.user_id user_id, upa.program_id program_id, p.name program_name, u.first_name user_first_name, u.last_name user_last_name FROM user u INNER JOIN user_program_auth upa ON u.user_id=upa.user_id INNER JOIN program p ON p.id=upa.program_id WHERE $CONDITIONS'
+--num-mappers
+1
+--target-dir
+/home/zemoso/imports
+--cassandra-keyspace
+iris
+--cassandra-table
+programs_by_user_id
+--cassandra-column-mapping
+user_id:user_id,program_id:program_id,program_name:program_name,user_first_name:user_first_name,user_last_name:user_last_name
+--connect
+jdbc:mysql://127.0.0.1/cmltDBSharing225
+--username
+root 
+--password
+zemoso123 
+--cassandra-host
+127.0.0.1

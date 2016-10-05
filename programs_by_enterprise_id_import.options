@@ -1,0 +1,21 @@
+cql-import
+--query
+'SELECT p.enterprise_id, p.id program_id, p.name program_name, e.city enterprise_city FROM program p INNER JOIN enterprise e ON p.enterprise_id=e.id WHERE $CONDITIONS'
+--num-mappers
+1
+--target-dir
+/home/zemoso/imports
+--cassandra-keyspace
+iris
+--cassandra-table
+programs_by_enterprise_id
+--cassandra-column-mapping
+enterprise_id:enterprise_id,program_id:program_id,program_name:program_name,enterprise_city:enterprise_city
+--connect
+jdbc:mysql://127.0.0.1/cmltDBSharing225
+--username
+root 
+--password
+zemoso123 
+--cassandra-host
+127.0.0.1
